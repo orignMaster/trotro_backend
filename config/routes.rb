@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :agencies 
   resources :fares 
   resources :fare_rules
+  resources :routes
 end
