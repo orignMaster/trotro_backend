@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :shapes
   resources :stops
   resources :stop_times
+  resources :trips
 end

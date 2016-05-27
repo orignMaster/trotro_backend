@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527210447) do
+ActiveRecord::Schema.define(version: 20160527212927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(version: 20160527210447) do
     t.string  "stop_name"
     t.decimal "stop_lat",  precision: 10, scale: 6
     t.decimal "stop_long", precision: 10, scale: 6
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "route_id"
+    t.string "service_id"
+    t.string "trip_id"
+    t.string "shape_id"
   end
 
 end
