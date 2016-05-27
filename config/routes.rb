@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :fares 
   resources :fare_rules
   resources :routes
+  resources :shapes
+  resources :stops
+  resources :stop_times
 end
