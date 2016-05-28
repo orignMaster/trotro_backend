@@ -1,6 +1,10 @@
 class StopsController < ApplicationController
   before_action :set_stop, only: [:show, :update, :destroy]
 
+  def search
+    render json: Stop.search(params[:search_param]).first(50)
+  end
+
   # GET /stops
   def index
     @stops = Stop.all

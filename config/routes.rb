@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+  get '/stops/search/:search_param' => 'stops#search'
+
   resources :agencies 
   resources :fares 
   resources :fare_rules
@@ -8,4 +12,5 @@ Rails.application.routes.draw do
   resources :stops
   resources :stop_times
   resources :trips
+  
 end
