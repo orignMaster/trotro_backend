@@ -5,6 +5,12 @@ class StopsController < ApplicationController
     render json: Stop.search(params[:search_param]).first(50)
   end
 
+  def nearest_stop
+    lat = params[:lat]
+    lng = params[:lng]
+    render json: Stop.closest(origin:[lat,lng])
+  end
+
   # GET /stops
   def index
     @stops = Stop.all
@@ -43,13 +49,13 @@ class StopsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_stop
-      @stop = Stop.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_stop
+    @stop = Stop.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def stop_params
-      params.permit(:stop_id, :stop_name, :stop_lat, :stop_long)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def stop_params
+    params.permit(:stop_id, :stop_name, :stop_lat, :stop_long)
+  end
 end

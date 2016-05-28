@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527234916) do
+ActiveRecord::Schema.define(version: 20160528025832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20160527234916) do
     t.string  "stop_name"
     t.decimal "stop_lat",  precision: 10, scale: 6
     t.decimal "stop_long", precision: 10, scale: 6
+    t.index ["stop_lat"], name: "index_stops_on_stop_lat", using: :btree
+    t.index ["stop_long"], name: "index_stops_on_stop_long", using: :btree
     t.index ["stop_name"], name: "index_stops_on_stop_name", using: :btree
   end
 
