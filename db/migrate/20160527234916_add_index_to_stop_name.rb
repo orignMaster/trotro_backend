@@ -1,0 +1,5 @@
+class AddIndexToStopName < ActiveRecord::Migration[5.0]
+  def change
+    add_index :stops, :stop_name
+  end
+end
